@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>የግብርና ሚኒስትር የኮሚቴ ሰራ የአፈጻጸም መከታተያ</title>
+
+  <style>
+    :root{
+      --primary:#2e7d32;
+      --primary-2:#1b5e20;
+      --surface: rgba(255,255,255,0.92);
+      --overlay: rgba(117, 66, 66, 0.55);
+      --text:#111;
+      --muted:#4b5563;
+      --radius:12px;
+      --shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    /* Full background image */
+    .bg-img{
+      background-image: url("https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px 16px 40px;
+      gap: 14px;
+    }
+
+    .container{
+      width: min(1100px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero{
+      background: var(--overlay);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1{
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .hero p{
+      margin: 10px 0 0;
+      font-size: 14px;
+      opacity: .95;
+    }
+
+    /* Tab container */
+    .tab{
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      background-color: rgba(241,241,241,0.95);
+      border-radius: var(--radius);
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .tab button{
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 14px;
+      font-size: 14px;
+      transition: 0.2s;
+      flex: 1 1 190px;
+      text-align: center;
+      color: #111;
+    }
+
+    .tab button:hover{
+      transform: translateY(-1px);
+      border-color: rgba(46,125,50,0.35);
+    }
+
+    .tab button.active{
+      background-color: var(--primary);
+      color: white;
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    /* Tab content */
+    .tabcontent{
+      display: none;
+      background-color: var(--surface);
+      padding: 18px 16px;
+      margin: 0;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .tabcontent h3{
+      margin: 0 0 10px;
+      color: #0f172a;
+      font-size: 18px;
+    }
+
+    .note{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .auth{
+      margin: 0 0 14px;
+      padding: 12px 12px;
+      border-radius: 10px;
+      background: rgba(46,125,50,0.08);
+      border: 1px solid rgba(46,125,50,0.22);
+      color: #0f172a;
+      font-size: 14px;
+    }
+
+    .auth strong{
+      display: inline-block;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    .tabcontent a{
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .tabcontent a:hover{
+      background-color: var(--primary-2);
+    }
+
+    footer{
+      margin-top: 4px;
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.35);
+      padding: 10px 12px;
+      border-radius: 10px;
+      width: min(1100px, 100%);
+      font-size: 12px;
+    }
+  
+
+    /* Button clusters */
+    .tab{
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+    .cluster-title{
+      font-weight: 700;
+      font-size: 14px;
+      padding: 4px 6px;
+      color: #0b3d1b;
+    }
+    .cluster-buttons{
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="bg-img">
+    <div class="container">
+      <div class="hero">
+        <h1>የግብርና ሚኒስትር በሚኒስትሩ የተቋቋሙ ኮሚቴ የስራ ዕቅድ አፈጻጸም መከታተያ</h1>
+        <p>Click on the buttons below to access your sector's tracking sheet</p>
+      </div>
+
+            <div class="tab" role="tablist" aria-label="ተቋማት ምርጫ">
+      <div class="cluster" role="group" aria-label="Minister Office">
+        <div class="cluster-title"><h1>sectors under the Minister office</h1></div>
+        <div class="cluster-buttons">
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQAWyzSK8J9eTJWIVrfb6GJRASJo0og4Knhy2tHYIT-tnDw?e=Er2mrc" onclick="goToLink(this)">ለሠራተኞች ምቹ የሥራ አከባቢ መፍጠርና መመገብ ኮሚቴ</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQCwaCunKxsnSpnKTHglayn3AaVsYrJjY94PKvTPDs4YM6I?e=NEmGPs" onclick="goToLink(this)">የመሬት ልየታ ዝግጅትና ንብረት ማሰወገድ ኮሚቴ</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQBJ441W-YlDQrFrM0EwEo-uARFo8pDzUuSJbY3hwKJdqUE?e=H4Btay" onclick="goToLink(this)">የሠራተኞች የአቅም ግንባታ፣ማትጊያና ማረሚያ ኮሚቴ</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQBC70X15cBMRL4U58w6tHH0AYSTcG0cPB640e1BMnY6J9s?e=8UjFPf" onclick="goToLink(this)">የፈንክሽናል ኮሚቴ</button>
+
+        </div>
+      </div>
+
+</div>
+
+
+    <footer>
+      Note:- please use your respective sectors for updating the progress
+    </footer>
+  </div>
+
+  <script>
+    // Redirect to the OneDrive link as soon as a button is clicked
+    function goToLink(btn) {
+      const url = btn?.dataset?.url;
+      if (url) {
+        window.location.href = url; // same tab
+      }
+    }
+  </script>
+</body>
+</html>
